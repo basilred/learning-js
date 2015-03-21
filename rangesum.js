@@ -5,7 +5,8 @@
  */
 function range(begin, end, step) {
     var res = [];
-    for (var i = begin; i <= end; step ? i += step : i++) {
+    //FIXIT  работает для отрицательного шага, но не учитывает последнее значение
+    for (var i = begin; i != end; step ? i += step : i++) {
         res.push(i);
     }
     return res;
@@ -20,4 +21,4 @@ function sum(array) {
 }
 
 console.log(sum(range(1, 10)));
-console.log(range(5, 2, -1));   //FIXIT не выполняется с отрицательным шагом
+console.log(range(5, 2, -1));
