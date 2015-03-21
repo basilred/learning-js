@@ -5,8 +5,9 @@
  */
 function range(begin, end, step) {
     var res = [];
-    //FIXIT  работает для отрицательного шага, но не учитывает последнее значение
-    for (var i = begin; i != end; step ? i += step : i++) {
+    for (var i = begin;
+         step < 0 ? i != (end - 1) : i != (end + 1);
+         step ? i += step : i++) {
         res.push(i);
     }
     return res;
