@@ -8,4 +8,21 @@ function arrayToList(array) {
     return list;
 }
 
-console.log(arrayToList([1,2,3]));
+function listToArray(list) {
+    var array = [];
+    for (var node = list; node; node = node.rest) {
+        array.push(node.value);
+    }
+    return array;
+}
+
+function prepend(value, list) {
+    return { value: value, rest: list };
+}
+
+
+console.log(arrayToList([1,2,3, "four", "five", "six", 777]));
+
+console.log(listToArray(arrayToList([1,2,3, "four", "five", "six", 777])));
+
+console.log(prepend(10, prepend(20, null)));
