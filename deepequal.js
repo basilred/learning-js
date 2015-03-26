@@ -9,7 +9,7 @@ function deepEqual(obj1, obj2) {
 
         for (var prop in obj2) {
             propObj2Count += 1;
-            if (obj1[prop] === obj2[prop]) return true;
+            return (obj1[prop] === obj2[prop]) ? true : false;
         }
 
     } else if (typeof obj1 == typeof obj2) {
